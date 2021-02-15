@@ -3,11 +3,13 @@ import React from 'react';
 // -- Styles
 import { Wrapper, CitiesContainer, MapContainer } from "../styles/styles"
 
+import Cities from "../components/Cities";
+
 const HomeView = () => {
     return (
         <Wrapper>
             <CitiesContainer>
-                        szegze
+                <Cities />
             </CitiesContainer>
             <MapContainer>
                 szegze

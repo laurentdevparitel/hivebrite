@@ -115,7 +115,6 @@ export default class API {
         console.info(`[${this.constructor.name}.getCities]`);
 
         const APIRoute = `${this.BASE_URL}/cities.json`;
-        console.info(`[${this.constructor.name}.getCities] APIRoute`, APIRoute);
 
         const response = axios.get(APIRoute, {
             //
