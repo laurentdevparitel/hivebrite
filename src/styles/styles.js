@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   max-width: 1000px;
 `
 
-export const CitiesContainer = styled.section`
+export const CitiesWrapper = styled.section`
   width: 20%;
   background: aquamarine;
   justify-content: center;
@@ -16,7 +16,7 @@ export const CitiesContainer = styled.section`
   text-align: center;
 `
 
-export const MapContainer = styled.section`
+export const MapWrapper = styled.section`
   width: 80%;
   background: azure;
   justify-content: center;

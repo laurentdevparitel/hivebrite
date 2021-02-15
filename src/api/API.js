@@ -126,9 +126,9 @@ export default class API {
             /*.catch( error => {
                 console.error(`[${this.constructor.name}.getCities] [error]`, API.handleAPIErrorMessages(error));
             });*/
-            .finally(error => {
+            /*.finally(error => {
                 console.error(`[${this.constructor.name}.getCities] [error]`, API.handleAPIErrorMessages(error));
-            });
+            });*/
 
         return response;
     }

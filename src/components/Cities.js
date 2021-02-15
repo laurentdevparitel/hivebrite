@@ -83,7 +83,7 @@ const Cities = () => {
             <ul>
                 {
                     cities.map( (city, index) => (
-                        <li>{city.city}</li>
+                        <li key={index}>{city.city}</li>
                     ))
                 }
             </ul>

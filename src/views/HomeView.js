@@ -1,19 +1,20 @@
 import React from 'react';
 
 // -- Styles
-import { Wrapper, CitiesContainer, MapContainer } from "../styles/styles"
+import { Wrapper, CitiesWrapper, MapWrapper } from "../styles/styles"
 
 import Cities from "../components/Cities";
+import Map from "../components/Map/Map";
 
 const HomeView = () => {
     return (
         <Wrapper>
-            <CitiesContainer>
+            <CitiesWrapper>
                 <Cities />
-            </CitiesContainer>
-            <MapContainer>
-                szegze
-            </MapContainer>
+            </CitiesWrapper>
+            <MapWrapper>
+                <Map />
+            </MapWrapper>
         </Wrapper>
     );
 };
