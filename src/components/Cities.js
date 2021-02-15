@@ -72,16 +72,23 @@ const Cities = () => {
     }
 
     console.info(`[${COMPONENT_NAME}] loading`, loading);
+    //console.info(`[${COMPONENT_NAME}] cities`, cities);
 
     return (
         <div>
             {
                 loading && <Loader />
             }
+
+            <ul>
+                {
+                    cities.map( (city, index) => (
+                        <li>{city.city}</li>
+                    ))
+                }
+            </ul>
         </div>
-
     )
-
 }
 
 export default Cities;

@@ -1,0 +1,12 @@
+
+# Add search bar
+
+> filter on cities
+
+# Cities :
+
+- show ordered cities
+- show all ?
+
+# Map
+

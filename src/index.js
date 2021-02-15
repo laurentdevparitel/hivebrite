@@ -8,13 +8,15 @@ import { store, persistor } from './redux/store/store'
 
 import './styles/index.css';
 
+import App from './App';
+
 // Redux Store Log
 window.store = store;
 
 // NB: Get store state :
 //store.getState()
 
-import App from './App';
+const rootElement = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
@@ -22,5 +24,5 @@ ReactDOM.render(
             <App />
         </PersistGate>
     </Provider>,
-    document.getElementById('root')
+    rootElement
 );
