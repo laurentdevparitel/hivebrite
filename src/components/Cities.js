@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 // -- Redux
 import { useDispatch, useSelector } from "react-redux";
 
+
+import {getSortedCities} from '../helpers/helpers';
+
 import Loader  from "./Loader/Loader";
 
 // -- Styles
@@ -100,7 +103,7 @@ const Cities = () => {
 
             <ul className="cities" style={{'maxHeight': MAP_HEIGHT+'px'}}>
                 {
-                    cities.map( (city, index) => (
+                    getSortedCities(cities).map( (city, index) => (
                         <li key={index}>
                             <Button onClick={ e => showCity(city) }>{city.city}</Button>
                         </li>

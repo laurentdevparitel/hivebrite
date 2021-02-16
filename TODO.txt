@@ -5,8 +5,8 @@
 
 # Cities :
 
-- show ordered cities
-- show all ?
+- show ordered cities > OK
+- show all > OK
 
 # Map
 
