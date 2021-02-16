@@ -15,7 +15,7 @@ const api = new API();
 
 const COMPONENT_NAME = "Cities";
 
-const MAP_HEIGHT = process.env.REACT_APP_MAP_HEIGHT || 700;
+const MAP_HEIGHT = process.env.REACT_APP_MAP_HEIGHT || 500;
 
 const Cities = () => {
 
@@ -25,8 +25,9 @@ const Cities = () => {
     // Redux
     const dispatch = useDispatch();
 
-    const { cities } = useSelector(state => ({
+    const { cities, city } = useSelector(state => ({
         cities: state.cities,
+        city: state.city,
     }));
 
     // Load cities on mount
@@ -76,8 +77,20 @@ const Cities = () => {
         }
     }
 
+    /**
+     * Show selected city on map
+     * @param {Object} city
+     * @returns void
+     */
+    const showCity = (city) => {
+        //console.info(`[${COMPONENT_NAME}.showCity]`, city);
+
+        // Redux storage;
+        dispatch({type: "SET_CITY", payload: city});
+    }
+
     console.info(`[${COMPONENT_NAME}] loading`, loading);
-    //console.info(`[${COMPONENT_NAME}] cities`, cities);
+    //console.info(`[${COMPONENT_NAME}] city`, city);
 
     return (
         <div>
@@ -85,11 +98,11 @@ const Cities = () => {
                 loading && <Loader />
             }
 
-            <ul className="cities" style={{'maxHeight': MAP_HEIGHT}}>
+            <ul className="cities" style={{'maxHeight': MAP_HEIGHT+'px'}}>
                 {
                     cities.map( (city, index) => (
                         <li key={index}>
-                            <Button>{city.city}</Button>
+                            <Button onClick={ e => showCity(city) }>{city.city}</Button>
                         </li>
                     ))
                 }
