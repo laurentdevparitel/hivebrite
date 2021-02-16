@@ -16,10 +16,15 @@ L.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
+const COMPONENT_NAME = "Map";
+
+const MAP_HEIGHT = process.env.REACT_APP_MAP_HEIGHT || 700;
+
 const Map = () => {
+    //console.info(`[${COMPONENT_NAME}]`);
 
     return(
-        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} style={{height: '700px'}}>
+        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} style={{height: MAP_HEIGHT}}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

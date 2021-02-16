@@ -5,12 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Loader  from "./Loader/Loader";
 
+// -- Styles
+import { Button } from "../styles/styles"
+
 // -- API
 import API from '../api/API.js';
 
 const api = new API();
 
 const COMPONENT_NAME = "Cities";
+
+const MAP_HEIGHT = process.env.REACT_APP_MAP_HEIGHT || 700;
 
 const Cities = () => {
 
@@ -80,10 +85,12 @@ const Cities = () => {
                 loading && <Loader />
             }
 
-            <ul>
+            <ul className="cities" style={{'maxHeight': MAP_HEIGHT}}>
                 {
                     cities.map( (city, index) => (
-                        <li key={index}>{city.city}</li>
+                        <li key={index}>
+                            <Button>{city.city}</Button>
+                        </li>
                     ))
                 }
             </ul>
