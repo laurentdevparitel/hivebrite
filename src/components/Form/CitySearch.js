@@ -49,6 +49,4 @@ const CitySearch = () => {
     );
 }
 
-
-
 export default CitySearch;
