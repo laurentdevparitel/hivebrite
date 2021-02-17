@@ -54,10 +54,10 @@ const Cities = () => {
 
         try {
             const data = await api.getCities();
-            console.info(`[${COMPONENT_NAME}.fetchData] >>>> data loaded: `, data);
+            //console.info(`[${COMPONENT_NAME}.fetchData] >>>> data loaded: `, data);
 
             if (typeof data !== "undefined") {
-                console.debug(`[${COMPONENT_NAME}.fetchData]: `, data);
+                //console.debug(`[${COMPONENT_NAME}.fetchData]: `, data);
 
                 dispatch({type: "SET_CITIES", payload: data});
 
@@ -97,7 +97,7 @@ const Cities = () => {
     //console.info(`[${COMPONENT_NAME}] city`, city);
 
     const data = (filteredCities && filteredCities.length) ? filteredCities  : cities;
-    console.info(`[${COMPONENT_NAME}] data`, data);
+    //console.info(`[${COMPONENT_NAME}] data`, data);
 
     return (
         <div>
@@ -107,9 +107,9 @@ const Cities = () => {
 
             <ul className="cities" style={{'maxHeight': MAP_HEIGHT+'px'}}>
                 {
-                    getSortedItems(data, 'city').map( (city, index) => (
+                    getSortedItems(data, 'city').map( (item, index) => (
                         <li key={index}>
-                            <Button onClick={ e => showCity(city) }>{city.city} ({city.state})</Button>
+                            <Button onClick={ e => showCity(item) } selected={city && ( (city.city+city.state) === (item.city+item.state))}>{item.city} ({item.state})</Button>
                         </li>
                     ))
                 }

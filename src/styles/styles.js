@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainWrapper = styled.div `
   margin: 40px auto;
@@ -42,6 +42,16 @@ export const Button = styled.button`
   text-align: center;
   padding:5px 10px;
   cursor: pointer;
+  &:hover {
+    color: #fff;
+    background-color: #053161;
+    border-color: #042b55;
+  }
+  ${props => props.selected && css`
+    color: #fff;
+    background-color: #4fc6e1;
+    border-color: #4fc6e1;
+  `}
 `
 
 export const InputTextField = styled.input`
@@ -50,5 +60,6 @@ export const InputTextField = styled.input`
   width: 100%;
   border: 1px solid #ddd;
   padding:10px 0px 10px 10px;
+
 `
 

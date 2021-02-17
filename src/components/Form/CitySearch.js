@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // -- Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -29,8 +29,19 @@ const CitySearch = () => {
         dispatch({type: "SET_FILTERED_CITIES", payload: filteredCities});
     }
 
+    /**
+     * Submit search
+     * @param {Event} e
+     * @returns void
+     */
+    const handleFormSubmit = (e) => {
+        //console.info(`[${COMPONENT_NAME}.handleFormSubmit]`, e);
+
+        e.preventDefault();
+    }
+
     return (
-        <form>
+        <form onSubmit={handleFormSubmit}>
             <div>
                 <InputTextField type="text" name="city" placeholder="Filter by city ..." onChange={handleSearchFilterChange} />
             </div>

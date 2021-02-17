@@ -15,7 +15,7 @@ const FILE_NAME = 'helpers';
  * @returns Array
  */
 export const searchOnProperty = (data = [], value = '', property) => {
-    console.info(`[${FILE_NAME}.searchOnProperty]`, data, value, property);
+    //console.info(`[${FILE_NAME}.searchOnProperty]`, data, value, property);
 
     const PATTERN = new RegExp(value, 'i');
     //console.info(`[helpers.searchOnProperty] PATTERN`, PATTERN);
@@ -36,7 +36,7 @@ export const searchOnProperty = (data = [], value = '', property) => {
  * @returns Array
  */
 export const getSortedItems = (items, key='name', direction = 'asc') => {
-    console.info(`[${FILE_NAME}.getSortedItems]`, items, key, direction);
+    //console.info(`[${FILE_NAME}.getSortedItems]`, items, key, direction);
 
     const sortedItems = [...items].sort(function(a, b){
         if (typeof a[key] === "undefined" || typeof b[key] === "undefined"){
