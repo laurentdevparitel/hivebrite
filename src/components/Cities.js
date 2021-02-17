@@ -28,9 +28,10 @@ const Cities = () => {
     // Redux
     const dispatch = useDispatch();
 
-    const { cities, city } = useSelector(state => ({
+    const { cities, city, filteredCities } = useSelector(state => ({
         cities: state.cities,
         city: state.city,
+        filteredCities: state.filteredCities,
     }));
 
     // Load cities on mount
@@ -95,6 +96,9 @@ const Cities = () => {
     console.info(`[${COMPONENT_NAME}] loading`, loading);
     //console.info(`[${COMPONENT_NAME}] city`, city);
 
+    const data = (filteredCities && filteredCities.length) ? filteredCities  : cities;
+    console.info(`[${COMPONENT_NAME}] data`, data);
+
     return (
         <div>
             {
@@ -103,9 +107,9 @@ const Cities = () => {
 
             <ul className="cities" style={{'maxHeight': MAP_HEIGHT+'px'}}>
                 {
-                    getSortedItems(cities, 'city').map( (city, index) => (
+                    getSortedItems(data, 'city').map( (city, index) => (
                         <li key={index}>
-                            <Button onClick={ e => showCity(city) }>{city.city}</Button>
+                            <Button onClick={ e => showCity(city) }>{city.city} ({city.state})</Button>
                         </li>
                     ))
                 }

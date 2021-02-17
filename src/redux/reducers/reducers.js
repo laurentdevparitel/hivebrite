@@ -2,6 +2,7 @@ import {
 
     SET_CITIES,
     SET_CITY,
+    SET_FILTERED_CITIES,
     SET_APP_MESSAGE,
     SET_IS_XHR_RUNNING,
 
@@ -12,6 +13,7 @@ const initialState = {
 
     cities: [],  // fetched cities from API
     city: null,    // selected city
+    filteredCities: [],  // filtered cities
     appMessage: {   // app success / error messages (cf: MuiAlert)
         text: null,   // message
         severity: "success"    // success|warning|info|error
@@ -35,6 +37,9 @@ const rootReducer = (state = initialState, action) => {
 
         case SET_CITY:
             return { ...state, city: action.payload };
+
+        case SET_FILTERED_CITIES:
+            return { ...state, filteredCities: action.payload };
 
         case SET_APP_MESSAGE:
             return { ...state, appMessage: action.payload };
